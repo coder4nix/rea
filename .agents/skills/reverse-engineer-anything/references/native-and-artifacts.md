@@ -23,6 +23,16 @@ dependencies. An omitted package kind stays null. A rustc commit hash is
 inferred from a read-only `/rustc/<40-hex>/` path and does not by itself
 identify the compiler. See [Rust binaries](https://github.com/morluto/rea/blob/main/docs/rust-binaries.md).
 
+## CPython pyc files
+
+Use `inspect_python_pyc` for an explicit local CPython 3.7–3.13 `.pyc` when the
+question concerns the header magic, PEP 552 source hash or timestamp, nested
+code-object names, or bytecode identity. No `open_binary`, Python installation,
+or target execution is required. The CLI equivalent is `inspect-python-pyc PATH`.
+Preserve artifact SHA-256, the 16-byte header fields, nested code names, and
+bytecode SHA-256. Bytecode is not decompiled. A decoded header does not prove
+the matching `.py` is present. See [CPython pyc inspection](https://github.com/morluto/rea/blob/main/docs/python-pyc.md).
+
 ## SQLite snapshots
 
 Use `inspect_sqlite_database` with an explicit local database snapshot for its

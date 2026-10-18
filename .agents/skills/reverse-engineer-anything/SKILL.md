@@ -177,6 +177,13 @@ explicit path or endpoint and do not need it.
   A rustc commit hash is an inference from a read-only `/rustc/<40-hex>/` path.
   See the
   [Rust binary guide](https://github.com/morluto/rea/blob/main/docs/rust-binaries.md).
+- CPython 3.7–3.13 `.pyc` header, nested marshal code objects and bytecode
+  identity: `inspect_python_pyc` with the explicit local file. This built-in
+  target-free inspection requires no Python installation. Preserve magic,
+  PEP 552 hash or mtime/size, nested names, and bytecode SHA-256. Bytecode is
+  not decompiled, and a decoded header does not prove the matching `.py` is
+  present. See the
+  [CPython pyc guide](https://github.com/morluto/rea/blob/main/docs/python-pyc.md).
 
 - Explicit local SQLite database snapshot: `inspect_sqlite_database`. Inspect
   with Node.js 24.x >=24.15 or 26+ providing native SQLite limits. Read schema

@@ -95,6 +95,17 @@ dependency edges, and the section's file range. A missing `.dep-v0` section is
 null metadata, not proof that the binary has no dependencies. See
 [Rust binaries](rust-binaries.md).
 
+Inspect a CPython 3.7–3.13 `.pyc` header and nested marshal code objects
+without executing bytecode or installing Python:
+
+```bash
+rea inspect-python-pyc /absolute/path/to/module.pyc --json
+```
+
+The workflow reports the pinned CPython version for the magic, PEP 552 hash or
+mtime/size fields, nested function names, and bytecode SHA-256. Bytecode is
+not decompiled. See [CPython pyc inspection](python-pyc.md).
+
 Configure [Hopper or Ghidra](installation.md#hopper), the
 [IDA adapter](ida-provider.md), or [Kuna](kuna-provider.md) before analyzing a
 native target. Substitute

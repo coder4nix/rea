@@ -350,6 +350,7 @@ const workflowAvailabilityFor = ({
   if (
     name === "inspect_go_binary" ||
     name === "inspect_rust_binary" ||
+    name === "inspect_python_pyc" ||
     name === "inspect_electron_fuses"
   )
     return { reason: "available", remediation: null };
